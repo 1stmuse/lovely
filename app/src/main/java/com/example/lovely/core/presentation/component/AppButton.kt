@@ -1,6 +1,8 @@
 package com.example.lovely.core.presentation.component
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -15,22 +17,29 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
+enum class Buttontype {
+    PRIMARY,
+    SECONDARY
+}
 
 @Composable
 fun AppButton(
     label: String,
+    variant: Buttontype = Buttontype.PRIMARY,
     onPress: () -> Unit
 ) {
 
     Box(
         modifier = Modifier.fillMaxWidth()
-            .clip(RoundedCornerShape(10.dp))
-            .background(MaterialTheme.colorScheme.primary)
-            .padding(vertical = 10.dp)
+            .border(1.dp, color = if(variant == Buttontype.PRIMARY) Color.White else Color.LightGray, shape = RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(20.dp))
+            .background( if(variant == Buttontype.PRIMARY) MaterialTheme.colorScheme.primary else Color.White)
+            .clickable { onPress() }
+            .padding(vertical = 15.dp)
         ,
         contentAlignment = Alignment.Center
     ) {
-        Text(text = label, color = Color.White)
+        Text(text = label, color = if(variant == Buttontype.PRIMARY) Color.White else MaterialTheme.colorScheme.primary)
     }
 }
 

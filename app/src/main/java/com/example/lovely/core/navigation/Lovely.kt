@@ -8,6 +8,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.example.lovely.core.navigation.graphs.authGraph
+import com.example.lovely.core.navigation.graphs.dashboardGraph
 import com.example.lovely.core.navigation.graphs.onboardingGraph
 
 
@@ -23,6 +25,8 @@ fun Lovely(
         .padding(0.dp)) {
         NavHost(navController = navController, startDestination = startDestination ){
             onboardingGraph(navController)
+            authGraph(navController)
+            dashboardGraph(navController)
         }
     }
 

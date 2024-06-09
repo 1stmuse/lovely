@@ -10,4 +10,8 @@ sealed class Destinations(val route: String) {
 
     object Discover: Destinations("discover")
     object Onboarding: Destinations("onboarding")
+
+//    AUTH
+    object SigninOptions: Destinations("signin_options")
+    object MobileAccess: Destinations("mobile_access")
 }

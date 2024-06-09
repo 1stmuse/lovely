@@ -6,19 +6,16 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.lovely.core.navigation.Destinations
 import com.example.lovely.core.navigation.GraphsRoute
-import com.example.lovely.onboarding.OnBoarding
+import com.example.lovely.discover_feature.presentation.Discover
 
 
-fun NavGraphBuilder.onboardingGraph(
+fun NavGraphBuilder.dashboardGraph(
     navController: NavHostController
-) {
+){
+    navigation(Destinations.Discover.route, GraphsRoute.Dashboard){
 
-    navigation(
-        startDestination = Destinations.Onboarding.route,
-        route = GraphsRoute.Onboarding
-    ){
-        composable(route = Destinations.Onboarding.route){
-            OnBoarding(navController)
+        composable(Destinations.Discover.route){
+            Discover(navController)
         }
     }
 }

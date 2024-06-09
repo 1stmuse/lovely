@@ -18,6 +18,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
+import androidx.navigation.NavOptionsBuilder
+import com.example.lovely.core.navigation.Destinations
 import com.example.lovely.core.presentation.component.AppButton
 import com.example.lovely.onboarding.component.SwiperItem
 import com.example.lovely.onboarding.component.onboardingItem
@@ -25,7 +30,8 @@ import com.example.lovely.onboarding.component.onboardingItem
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoarding() {
+fun OnBoarding(navController: NavController) {
+    val vm:OnboardingViewModel = hiltViewModel()
     val state = rememberPagerState(initialPage = 0, pageCount = { onboardingItem.size})
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -52,7 +58,9 @@ fun OnBoarding() {
                 )
             Spacer(modifier = Modifier.height(30.dp))
             AppButton(label = "Create Account") {
-
+                vm.loginUser()
+                val navOptions = NavOptions.Builder().setPopUpTo(Destinations.Onboarding.route, inclusive = true).build()
+                navController.navigate(Destinations.SigninOptions.route, navOptions)
             }
         }
     }
