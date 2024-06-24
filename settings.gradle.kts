@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "lovely"
 include(":app")
+include(":Calendar")

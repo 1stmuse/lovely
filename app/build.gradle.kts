@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.lovely"
+    namespace = "com.lovely"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.lovely"
+        applicationId = "com.lovely"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -57,6 +57,8 @@ android {
 
 dependencies {
     val nav_version = "2.7.7"
+    val calendarVersion = "1.3.0"
+    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.4")
 
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
@@ -102,4 +104,9 @@ dependencies {
     // To use Kotlin annotation processing tool (kapt)
     kapt("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
+
+    //Calendar
+    implementation ("io.github.boguszpawlowski.composecalendar:composecalendar:$calendarVersion")
+    implementation ("io.github.boguszpawlowski.composecalendar:kotlinx-datetime:$calendarVersion")
+
 }
