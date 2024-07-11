@@ -31,6 +31,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.lovely.core.navigation.Destinations
 import com.lovely.core.presentation.component.AppButton
 
 val options = listOf("Woman", "Man", "Others")
@@ -44,7 +45,7 @@ fun GenderSelection(navController: NavController) {
         .padding(horizontal = 20.dp)){
         Column(modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 40.dp)) {
+            .padding(top = 20.dp)) {
             Row (
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -99,7 +100,7 @@ fun GenderSelection(navController: NavController) {
 
         Column(modifier = Modifier.align(Alignment.BottomCenter)) {
             AppButton(label = "Continue") {
-
+                navController.navigate(Destinations.Interest.route)
             }
             Spacer(modifier = Modifier.height(20.dp))
         }

@@ -76,7 +76,7 @@ fun CreateProfileScreen(
         Text(text = "Profile Details", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(50.dp))
         Box(modifier = Modifier.align(Alignment.CenterHorizontally)){
-            Image(painter = painterResource(id = R.drawable.photo), contentDescription = null,
+            Image(painter = painterResource(id = R.drawable.face), contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .height(100.dp)

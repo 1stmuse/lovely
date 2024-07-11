@@ -22,4 +22,14 @@ class SessionManager @Inject constructor ( private val sharedPreferences: Shared
     fun getAuthToken(): String {
         return sharedPreferences.getString(AUTH_TK, "") ?: ""
     }
+
+    fun setUserId(id: String){
+        sharedPreferences.edit {
+            putString(USER_ID, id)
+        }
+    }
+
+    fun getUserId(): String {
+        return sharedPreferences.getString(USER_ID, "") ?: ""
+    }
 }

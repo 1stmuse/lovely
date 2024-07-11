@@ -16,4 +16,6 @@ sealed class Destinations(val route: String) {
     object MobileAccess: Destinations("mobile_access")
     object CreateProfile: Destinations("create_profile")
     object GenderSelection: Destinations("gender_selection")
+    object Interest: Destinations("interest")
+    object EnableNotification: Destinations("enable_notification")
 }

@@ -1,5 +1,7 @@
 package com.lovely.core.navigation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,6 +15,7 @@ import com.lovely.core.navigation.graphs.dashboardGraph
 import com.lovely.core.navigation.graphs.onboardingGraph
 
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun Lovely(
     startDestination: String
