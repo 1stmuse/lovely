@@ -1,4 +1,4 @@
-package com.lovely.auth_feature.presentation
+package com.lovely.auth.presentation
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -39,7 +39,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.capitalize
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -49,11 +48,8 @@ import com.lovely.core.navigation.Destinations
 import com.lovely.core.presentation.component.AppButton
 import com.lovely.core.presentation.component.AppInput
 import io.github.boguszpawlowski.composecalendar.SelectableCalendar
-import io.github.boguszpawlowski.composecalendar.StaticCalendar
-import io.github.boguszpawlowski.composecalendar.rememberCalendarState
 import io.github.boguszpawlowski.composecalendar.rememberSelectableCalendarState
 import io.github.boguszpawlowski.composecalendar.selection.SelectionMode
-import java.time.YearMonth
 
 @OptIn(ExperimentalMaterial3Api::class)
 @RequiresApi(Build.VERSION_CODES.O)

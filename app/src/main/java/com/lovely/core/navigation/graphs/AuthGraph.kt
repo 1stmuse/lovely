@@ -6,12 +6,13 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-import com.lovely.auth_feature.presentation.CreateProfileScreen
-import com.lovely.auth_feature.presentation.EnableNotificationScreen
-import com.lovely.auth_feature.presentation.GenderSelection
-import com.lovely.auth_feature.presentation.Interest
-import com.lovely.auth_feature.presentation.MobileAccess
-import com.lovely.auth_feature.presentation.SigninOptions
+import com.lovely.auth.presentation.CreateProfileScreen
+import com.lovely.auth.presentation.EnableNotificationScreen
+import com.lovely.auth.presentation.GenderSelection
+import com.lovely.auth.presentation.Interest
+import com.lovely.auth.presentation.MobileAccess
+import com.lovely.auth.presentation.SigninOptions
+import com.lovely.auth.presentation.VerifyNumberScreen
 import com.lovely.core.navigation.Destinations
 import com.lovely.core.navigation.GraphsRoute
 
@@ -39,6 +40,10 @@ fun NavGraphBuilder.authGraph(navController: NavHostController){
         }
         composable(Destinations.EnableNotification.route){
             EnableNotificationScreen(navController = navController)
+        }
+
+        composable(Destinations.VerifyNumber.route){
+            VerifyNumberScreen(navController = navController)
         }
     }
 }

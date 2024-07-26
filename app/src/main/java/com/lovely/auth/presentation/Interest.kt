@@ -1,4 +1,4 @@
-package com.lovely.auth_feature.presentation
+package com.lovely.auth.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -31,8 +31,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import coil.compose.AsyncImagePainter.State.Empty.painter
-import com.lovely.auth_feature.presentation.data.interest
+import com.lovely.auth.presentation.data.interest
 import com.lovely.core.navigation.Destinations
 import com.lovely.core.presentation.component.AppButton
 

@@ -1,7 +1,7 @@
 package com.lovely.onboarding
 
 import androidx.lifecycle.ViewModel
-import com.lovely.auth_feature.data.local.SessionManager
+import com.lovely.auth.data.local.SessionManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

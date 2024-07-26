@@ -1,4 +1,4 @@
-package com.lovely.auth_feature.presentation
+package com.lovely.auth.presentation
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -31,7 +31,7 @@ fun MobileAccess(navController: NavController) {
         AppInput(label = "number", value = ""){}
         Spacer(modifier = Modifier.height(40.dp))
         AppButton(label = "Continue") {
-            navController.navigate(Destinations.CreateProfile.route)
+            navController.navigate(Destinations.VerifyNumber.route)
         }
     }
 }

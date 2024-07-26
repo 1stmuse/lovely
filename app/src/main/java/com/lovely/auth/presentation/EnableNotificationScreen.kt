@@ -1,4 +1,4 @@
-package com.lovely.auth_feature.presentation
+package com.lovely.auth.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.lovely.R
-import com.lovely.core.navigation.Destinations
+import com.lovely.core.navigation.GraphsRoute
 import com.lovely.core.presentation.component.AppButton
 
 
@@ -58,7 +58,7 @@ fun EnableNotificationScreen(
         }
         Column(modifier = Modifier.align(Alignment.BottomCenter)) {
             AppButton(label = "Continue") {
-                navController.navigate(Destinations.EnableNotification.route)
+                navController.navigate(GraphsRoute.Dashboard)
             }
             Spacer(modifier = Modifier.height(20.dp))
         }

@@ -1,4 +1,4 @@
-package com.lovely.auth_feature.data.local
+package com.lovely.auth.data.local
 
 import android.content.SharedPreferences
 import androidx.core.content.edit

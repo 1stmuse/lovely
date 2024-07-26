@@ -1,7 +1,7 @@
 package com.lovely.core.presentation
 
 import androidx.lifecycle.ViewModel
-import com.lovely.auth_feature.data.local.SessionManager
+import com.lovely.auth.data.local.SessionManager
 import com.lovely.core.navigation.GraphsRoute
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

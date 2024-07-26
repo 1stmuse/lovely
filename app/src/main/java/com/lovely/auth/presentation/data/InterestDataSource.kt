@@ -1,4 +1,4 @@
-package com.lovely.auth_feature.presentation.data
+package com.lovely.auth.presentation.data
 
 import com.lovely.R
 
