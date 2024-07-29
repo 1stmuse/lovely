@@ -37,8 +37,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                    Lovely(startDestination = if(mainViewModel.isLogin()) GraphsRoute.Dashboard else GraphsRoute.Onboarding)
-                    Lovely(startDestination = mainViewModel.startDestination.collectAsState().value)
+                    Lovely(startDestination = GraphsRoute.Dashboard)
+//                    Lovely(startDestination = mainViewModel.startDestination.collectAsState().value)
                 }
             }
         }
