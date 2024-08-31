@@ -2,6 +2,7 @@ package com.lovely.discover.presentation
 
 import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.ViewModel
+import com.lovely.discover.data.usersList
 import com.lovely.onboarding.component.onboardingItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -11,7 +12,7 @@ import javax.inject.Inject
 @HiltViewModel
 class DiscoverViewModel @Inject constructor(): ViewModel() {
 
-    private val _cards = MutableStateFlow(onboardingItem)
+    private val _cards = MutableStateFlow(usersList)
      var cards = _cards.asStateFlow()
 
     fun onSwipe(event: DiscoverUIEvents){
@@ -28,6 +29,7 @@ class DiscoverViewModel @Inject constructor(): ViewModel() {
 
     private fun swipedLeft(index: Int){
         _cards.value = _cards.value.filter { it -> it.id != index }
+
     }
 
     private fun swipedRight(index: Int){
