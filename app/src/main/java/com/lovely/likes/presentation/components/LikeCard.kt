@@ -35,6 +35,7 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.drawable.toDrawable
@@ -43,6 +44,7 @@ import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Size
+import com.lovely.core.presentation.component.Space
 import com.lovely.core.util.CONSTANTS
 import com.lovely.core.util.getAverageColor
 import com.lovely.discover.data.User
@@ -65,9 +67,10 @@ fun LikeCard(
     
     Box(modifier = Modifier
         .width(160.dp)
-//        .height(250.dp)
+        .height(220.dp)
         .padding(bottom = 20.dp)
-        .clip(RoundedCornerShape(10.dp))
+        .clip(RoundedCornerShape(10.dp)),
+        contentAlignment = Alignment.BottomStart
          ){
         when(imageState){
             is AsyncImagePainter.State.Loading,
@@ -79,7 +82,7 @@ fun LikeCard(
                     contentScale = ContentScale.FillBounds,
                     modifier = Modifier
                         .width(160.dp)
-                        .height(250.dp)
+                        .height(220.dp)
                 )
             }
 
@@ -91,15 +94,21 @@ fun LikeCard(
                     contentScale = ContentScale.FillBounds,
                     modifier = Modifier
                         .width(160.dp)
-                        .height(250.dp)
+                        .height(220.dp)
                 )
             }
         }
 
         Column(modifier = Modifier
-            .fillMaxHeight()
-            .align(Alignment.BottomStart)) {
-            Text(text = "${item.name}, ${item.age}")
+            .fillMaxWidth()
+            .align(Alignment.BottomEnd))
+        {
+            Text(text = "${item.name}, ${item.age}", 
+                 color = Color.White, 
+                 fontWeight = FontWeight.Bold,
+                 modifier = Modifier.padding(start = 5.dp)
+            )
+            Space(height = 5.dp)
             Box(modifier = Modifier){
                 Row (
                     modifier = Modifier
@@ -115,21 +124,37 @@ fun LikeCard(
                         .height(50.dp)
                         .fillMaxWidth()
                     ,
-                    horizontalArrangement = Arrangement.SpaceBetween
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Icon(imageVector = Icons.Default.Close,
-                         contentDescription = null,
-                         tint = Color.White,
-                         modifier = Modifier.size(20.dp)
-                    )
+                    Box(
+                        modifier = Modifier.weight(1f),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(imageVector = Icons.Default.Close,
+                             contentDescription = null,
+                             tint = Color.White,
+                             modifier = Modifier
+                                 .size(20.dp)
+                                 
+                        ) 
+                    }
+                   
                     Divider(modifier = Modifier
                         .fillMaxHeight()
                         .width(1.dp), thickness = 2.dp)
-                    Icon(imageVector = Icons.Default.Favorite,
-                         contentDescription = null,
-                         tint = Color.White,
-                         modifier = Modifier.size(20.dp)
-                    )
+                    Box(
+                        modifier = Modifier.weight(1f),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.Favorite,
+                            contentDescription = null,
+                            tint = Color.White,
+                            modifier = Modifier.size(20.dp),
+                            
+                        )
+                    }
                 }
             }
 

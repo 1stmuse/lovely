@@ -51,7 +51,7 @@ val tabs = listOf<String>("Girls", "Boys", "Both")
 @SuppressLint("SuspiciousIndentation")
 @Composable
 fun Discover(navController: NavController) {
-    var showFilter by remember { mutableStateOf(true) }
+    var showFilter by remember { mutableStateOf(false) }
     var selectedTab by remember { mutableStateOf(tabs[0]) }
 
     var distanceRange by remember { mutableFloatStateOf(0f) }
@@ -125,7 +125,7 @@ fun Discover(navController: NavController) {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clip(RoundedCornerShape(10.dp))
-                                .border(width = 0.5.dp, color = Color.Gray)
+                                .border(width = 0.5.dp, color = Color.Gray, shape = RoundedCornerShape(10.dp))
                         ) {
                             tabs.forEach {
                                 Box(

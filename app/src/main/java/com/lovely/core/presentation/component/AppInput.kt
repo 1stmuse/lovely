@@ -14,15 +14,20 @@ import androidx.compose.ui.unit.dp
 fun AppInput(
     label: String,
     value: String,
+    leadingIcon: (@Composable () -> Unit)? = null,
     onChange: (value: String) -> Unit
 ) {
 
-    OutlinedTextField(value = value, onValueChange = onChange,
+    OutlinedTextField(
+        value = value,
+        onValueChange = onChange,
         label = { Text(text = label)},
         modifier = Modifier.fillMaxWidth(),
         colors = OutlinedTextFieldDefaults.colors(
             unfocusedBorderColor = Color.LightGray,
         ),
-        shape = RoundedCornerShape(15.dp)
+        shape = RoundedCornerShape(15.dp),
+        leadingIcon = leadingIcon
+
     )
 }
