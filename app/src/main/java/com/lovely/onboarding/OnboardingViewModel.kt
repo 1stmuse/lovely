@@ -2,11 +2,9 @@ package com.lovely.onboarding
 
 import androidx.lifecycle.ViewModel
 import com.lovely.auth.data.local.SessionManager
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
-@HiltViewModel
-class OnboardingViewModel @Inject constructor (
+
+class OnboardingViewModel (
     private val sessionManager: SessionManager
 ): ViewModel() {
 

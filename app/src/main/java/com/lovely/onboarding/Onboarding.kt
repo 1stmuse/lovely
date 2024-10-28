@@ -18,19 +18,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
 import com.lovely.core.navigation.Destinations
 import com.lovely.core.presentation.component.AppButton
 import com.lovely.onboarding.component.SwiperItem
 import com.lovely.onboarding.component.onboardingItem
+import org.koin.androidx.compose.navigation.koinNavViewModel
 
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnBoarding(navController: NavController) {
-    val vm:OnboardingViewModel = hiltViewModel()
+    val vm:OnboardingViewModel = koinNavViewModel()
     val state = rememberPagerState(initialPage = 0, pageCount = { onboardingItem.size})
 
     Column(modifier = Modifier.fillMaxSize()) {
